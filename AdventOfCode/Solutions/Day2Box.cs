@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.Itsho.Solutions
 {
-    public  class Box
+    public  class Day2Box
     {
         public int Length { get; set; }
 

@@ -23,6 +23,13 @@ namespace AdventOfCode.Itsho
             Console.WriteLine("wrapping paper needed: " + Day2Solution.GetRibbon(RiddleSource.DAY2_RIDDLE));
 
 
+            Tester.TestDay3Part1();
+            Console.WriteLine("Houses received at least one present: " + Day3Solution.GetHousesWithOnePresent(RiddleSource.DAY3_RIDDLE,false));
+
+            Tester.TestDay3Part2();
+            Console.WriteLine("Houses received at least one present with robo-santa: " + Day3Solution.GetHousesWithOnePresent(RiddleSource.DAY3_RIDDLE,true));
+
+
             Console.ReadKey();
         }
     }
