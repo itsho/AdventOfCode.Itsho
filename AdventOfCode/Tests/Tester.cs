@@ -42,5 +42,13 @@ namespace AdventOfCode.Itsho.Tests
             //^v^v^v^v^v now delivers presents to 11 houses, with Santa going one direction and Robo-Santa going the other.
             Assert.AreEqual(11, Day3Solution.GetHousesWithOnePresent("^v^v^v^v^v", true));
         }
+
+        internal static void TestDay4Part1()
+        {
+            // If your secret key is abcdef, the answer is 609043, because the MD5 hash of abcdef609043 starts with five zeroes (000001dbbfa...), and it is the lowest such number to do so.
+            Assert.AreEqual(609043, Day4Solution.GetMD5Answer("abcdef",5));
+            //If your secret key is pqrstuv, the lowest number it combines with to make an MD5 hash starting with five zeroes is 1048970; that is, the MD5 hash of pqrstuv1048970 looks like 000006136ef....
+            Assert.AreEqual(1048970, Day4Solution.GetMD5Answer("pqrstuv",5));
+        }
     }
 }
