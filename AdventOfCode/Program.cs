@@ -14,6 +14,7 @@ namespace AdventOfCode.Itsho
         {
             // Hebrew instructions for day 1: http://pastebin.com/2MeAkKZ3
 
+            /*
             Console.WriteLine("------ Day 1 ------");
             Tester.TestDay1Part2();
             ConsoleWriteLineTimed("Enter basement is in position: " ,()=>Day1Solution.FindBasement(RiddleSource.DAY1_RIDDLE).ToString());
@@ -36,13 +37,22 @@ namespace AdventOfCode.Itsho
             
             Console.WriteLine("------ Day 4 ------");
 
-            ConsoleWriteLineTimed("Starts with 5 zeros :", () => Day4Solution.GetMD5Answer(RiddleSource.DAY4_RIDDLE, 5).ToString());
-            ConsoleWriteLineTimed("Starts with 6 zeros :", () => Day4Solution.GetMD5Answer(RiddleSource.DAY4_RIDDLE, 6).ToString());
-            
+            Tester.TestDay4Part1();
+            ConsoleWriteLineTimed("Starts with 5 zeros: ", () => Day4Solution.GetMD5Answer(RiddleSource.DAY4_RIDDLE, 5).ToString());
+            ConsoleWriteLineTimed("Starts with 6 zeros: ", () => Day4Solution.GetMD5Answer(RiddleSource.DAY4_RIDDLE, 6).ToString());
+            */
             Console.WriteLine("------ Day 5 ------");
 
-            
+            Tester.TestDay5Part1();
+            ConsoleWriteLineTimed("Total nice strings: ", () => Day5Solution.CountNiceStringsPart1(RiddleSource.DAY5_RIDDLE).ToString());
+            Tester.TestDay5Part2();
+            ConsoleWriteLineTimed("Total nice strings: ", () => Day5Solution.CountNiceStringsPart2(RiddleSource.DAY5_RIDDLE).ToString());
 
+
+            //Console.WriteLine("------ Day 6 ------");
+
+            //Tester.TestDay6Part1();
+            //ConsoleWriteLineTimed(": ", () => Day6Solution.CountNiceStrings(RiddleSource.DAY6_RIDDLE).ToString());
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();

@@ -55,6 +55,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Solutions\Day3House.cs" />
     <Compile Include="Solutions\Day3Solution.cs" />
+    <Compile Include="Solutions\Day6Solution.cs" />
+    <Compile Include="Solutions\Day5Solution.cs" />
     <Compile Include="Solutions\Day4Solution.cs" />
     <Compile Include="Tests\Tester.cs" />
   </ItemGroup>

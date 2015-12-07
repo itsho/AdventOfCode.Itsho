@@ -46,9 +46,38 @@ namespace AdventOfCode.Itsho.Tests
         internal static void TestDay4Part1()
         {
             // If your secret key is abcdef, the answer is 609043, because the MD5 hash of abcdef609043 starts with five zeroes (000001dbbfa...), and it is the lowest such number to do so.
-            Assert.AreEqual(609043, Day4Solution.GetMD5Answer("abcdef",5));
+            Assert.AreEqual(609043, Day4Solution.GetMD5Answer("abcdef", 5));
             //If your secret key is pqrstuv, the lowest number it combines with to make an MD5 hash starting with five zeroes is 1048970; that is, the MD5 hash of pqrstuv1048970 looks like 000006136ef....
-            Assert.AreEqual(1048970, Day4Solution.GetMD5Answer("pqrstuv",5));
+            Assert.AreEqual(1048970, Day4Solution.GetMD5Answer("pqrstuv", 5));
+        }
+
+        internal static void TestDay5Part1()
+        {
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart1("ugknbfddgicrmopn") == 1);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart1("aaa") == 1);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart1("jchzalrnumimnmhp") == 0);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart1("haegwjzuvuyypxyu") == 0);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart1("dvszwmarrgswjxmb") == 0);
+
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart1("aeiouxx") == 1);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart1("aeixx") == 1);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart1("xazegovxx") == 1);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart1("aeiouaeiouaeiouxx") == 1);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart1("aeiouaeiouaeiuxx") == 1);
+        }
+
+        internal static void TestDay5Part2()
+        {
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart2("xyxyefe") == 1);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart2("xyxy") == 1);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart2("aabcdefgaa") == 0);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart2("aabcdedgaa") == 1);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart2("qjhvhtzxzqqjkmpb") == 1);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart2("aaaodo") == 0);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart2("xxyxx") == 1);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart2("xxdydxx") == 1);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart2("uurcxstgmygtbstg") == 0);
+            Assert.IsTrue(Day5Solution.CountNiceStringsPart2("ieodomkazucvgmuy") == 0);
         }
     }
 }
