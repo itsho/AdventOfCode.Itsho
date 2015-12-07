@@ -40,19 +40,22 @@ namespace AdventOfCode.Itsho
             Tester.TestDay4Part1();
             ConsoleWriteLineTimed("Starts with 5 zeros: ", () => Day4Solution.GetMD5Answer(RiddleSource.DAY4_RIDDLE, 5).ToString());
             ConsoleWriteLineTimed("Starts with 6 zeros: ", () => Day4Solution.GetMD5Answer(RiddleSource.DAY4_RIDDLE, 6).ToString());
-            */
+           
             Console.WriteLine("------ Day 5 ------");
 
             Tester.TestDay5Part1();
             ConsoleWriteLineTimed("Total nice strings: ", () => Day5Solution.CountNiceStringsPart1(RiddleSource.DAY5_RIDDLE).ToString());
             Tester.TestDay5Part2();
             ConsoleWriteLineTimed("Total nice strings: ", () => Day5Solution.CountNiceStringsPart2(RiddleSource.DAY5_RIDDLE).ToString());
+            */
 
+            Console.WriteLine("------ Day 6 ------");
 
-            //Console.WriteLine("------ Day 6 ------");
+            Tester.TestDay6Part1();
+            ConsoleWriteLineTimed("Total lit lights: ", () => Day6Solution.GetTurnedLights1(RiddleSource.DAY6_RIDDLE).ToString());
 
-            //Tester.TestDay6Part1();
-            //ConsoleWriteLineTimed(": ", () => Day6Solution.CountNiceStrings(RiddleSource.DAY6_RIDDLE).ToString());
+            Tester.TestDay6Part2();
+            ConsoleWriteLineTimed("Total brightness: ", () => Day6Solution.GetTurnedLights2(RiddleSource.DAY6_RIDDLE).ToString());
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();

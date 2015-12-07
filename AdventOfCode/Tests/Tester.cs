@@ -79,5 +79,36 @@ namespace AdventOfCode.Itsho.Tests
             Assert.IsTrue(Day5Solution.CountNiceStringsPart2("uurcxstgmygtbstg") == 0);
             Assert.IsTrue(Day5Solution.CountNiceStringsPart2("ieodomkazucvgmuy") == 0);
         }
+
+        internal static void TestDay6Part1()
+        {
+            Assert.AreEqual(1000000, Day6Solution.GetTurnedLights1("turn on 0,0 through 999,999"));
+            Assert.AreEqual(1000, Day6Solution.GetTurnedLights1("toggle 0,0 through 999,0"));
+            Assert.AreEqual(0, Day6Solution.GetTurnedLights1("turn off 499,499 through 500,500"));
+            
+        }
+
+        internal static void TestDay6Part2()
+        {
+            Assert.AreEqual(1, Day6Solution.GetTurnedLights2("turn on 0,0 through 0,0"));
+            Assert.AreEqual(1000000, Day6Solution.GetTurnedLights2("turn on 0,0 through 999,999"));
+            Assert.AreEqual(2000000, Day6Solution.GetTurnedLights2("toggle 0,0 through 999,999"));
+            Assert.AreEqual(2000, Day6Solution.GetTurnedLights2("toggle 0,0 through 999,0"));
+            Assert.AreEqual(0, Day6Solution.GetTurnedLights2(@"turn on 0,0 through 0,999
+turn off 0,0 through 0,999"));
+
+            Assert.AreEqual(1000, Day6Solution.GetTurnedLights2(
+@"turn on 0,0 through 1,999
+turn off 0,0 through 0,999"));
+
+            // first row =  1st row 1, 2nd row 1
+            // second row = 1st row 0, 2nd row 1
+            // third row = 1st row 2, 2nd row 3, 3rd row 2
+            Assert.AreEqual(2*1000+3*1000+2*1000, Day6Solution.GetTurnedLights2(
+@"turn on 0,0 through 1,999
+turn off 0,0 through 0,999
+toggle 0,0 through 2,999"));
+
+        }
     }
 }
