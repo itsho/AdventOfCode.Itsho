@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode.Itsho.Solutions
 {
-    public static class Day1Solution
+    public static class Day01Solution
     {
         public static int FindBasement(string p_strRiddleSource)
         {

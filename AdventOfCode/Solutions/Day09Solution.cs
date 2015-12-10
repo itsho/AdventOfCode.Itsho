@@ -4,13 +4,13 @@ using System.Linq;
 
 namespace AdventOfCode.Itsho.Solutions
 {
-    public static class Day9Solution
+    public static class Day09Solution
     {
         public static int GetRouteDistance(string[] p_strInput, bool p_blnFindShortestRoute)
         {
             // Key= Destination City name
             // Value = class of that city
-            Dictionary<string, Day9SingleDestination> lstAllDestinations = new Dictionary<string, Day9SingleDestination>();
+            Dictionary<string, Day09SingleDestination> lstAllDestinations = new Dictionary<string, Day09SingleDestination>();
 
             #region Parse input
 
@@ -25,12 +25,12 @@ namespace AdventOfCode.Itsho.Solutions
                 // #1  add Tristram as destination
                 if (!lstAllDestinations.ContainsKey(arrRoute[0]))
                 {
-                    lstAllDestinations.Add(arrRoute[0], new Day9SingleDestination(arrRoute[0]));
+                    lstAllDestinations.Add(arrRoute[0], new Day09SingleDestination(arrRoute[0]));
                 }
                 // #2  add AlphaCentauri as destination  
                 if (!lstAllDestinations.ContainsKey(arrRoute[2]))
                 {
-                    lstAllDestinations.Add(arrRoute[2], new Day9SingleDestination(arrRoute[2]));
+                    lstAllDestinations.Add(arrRoute[2], new Day09SingleDestination(arrRoute[2]));
                 }
 
                 // #3   Tristram to AlphaCentauri = 34

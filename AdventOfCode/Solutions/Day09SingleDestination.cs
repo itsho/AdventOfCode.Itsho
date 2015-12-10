@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace AdventOfCode.Itsho.Solutions
 {
-    public class Day9SingleDestination
+    public class Day09SingleDestination
     {
         public bool IsUsed { get; set; }
 
@@ -12,12 +12,12 @@ namespace AdventOfCode.Itsho.Solutions
         /// <summary>
         /// sort by shortest distance
         /// </summary>
-        public Dictionary<int, Day9SingleDestination> Routes { get; private set; }
+        public Dictionary<int, Day09SingleDestination> Routes { get; private set; }
 
-        public Day9SingleDestination(string p_strName)
+        public Day09SingleDestination(string p_strName)
         {
             Name = p_strName;
-            Routes = new Dictionary<int, Day9SingleDestination>();
+            Routes = new Dictionary<int, Day09SingleDestination>();
         }
 
         public int GetDistanceByExistingRoutes(bool p_blnSortByShortest)

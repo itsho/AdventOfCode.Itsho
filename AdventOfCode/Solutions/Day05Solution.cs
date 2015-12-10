@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.Itsho.Solutions
 {
-    public static class Day5Solution
+    public static class Day05Solution
     {
         private static readonly object lockThis = new object();
 

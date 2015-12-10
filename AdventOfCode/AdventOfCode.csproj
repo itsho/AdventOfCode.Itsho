@@ -48,30 +48,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RiddleSources\RiddleSource.cs" />
-    <Compile Include="Solutions\Day2Box.cs" />
-    <Compile Include="Solutions\Day1Solution.cs" />
-    <Compile Include="Solutions\Day2Solution.cs" />
+    <Compile Include="Solutions\Day10Solution.cs" />
+    <Compile Include="Solutions\Day02Box.cs" />
+    <Compile Include="Solutions\Day01Solution.cs" />
+    <Compile Include="Solutions\Day02Solution.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Solutions\Day3House.cs" />
-    <Compile Include="Solutions\Day3Solution.cs" />
-    <Compile Include="Solutions\Day7Solution.cs" />
-    <Compile Include="Solutions\Day6Solution.cs" />
-    <Compile Include="Solutions\Day5Solution.cs" />
-    <Compile Include="Solutions\Day4Solution.cs" />
-    <Compile Include="Solutions\Day9SingleDestination.cs" />
-    <Compile Include="Solutions\Day9Solution.cs" />
-    <Compile Include="Solutions\Day8Solution.cs" />
+    <Compile Include="Solutions\Day03House.cs" />
+    <Compile Include="Solutions\Day03Solution.cs" />
+    <Compile Include="Solutions\Day07Solution.cs" />
+    <Compile Include="Solutions\Day06Solution.cs" />
+    <Compile Include="Solutions\Day05Solution.cs" />
+    <Compile Include="Solutions\Day04Solution.cs" />
+    <Compile Include="Solutions\Day09SingleDestination.cs" />
+    <Compile Include="Solutions\Day09Solution.cs" />
+    <Compile Include="Solutions\Day08Solution.cs" />
     <Compile Include="Tests\Tester.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RiddleSources\DAY8.txt">
+    <Content Include="RiddleSources\DAY08.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="RiddleSources\DAY9.txt">
+    <Content Include="RiddleSources\DAY10.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RiddleSources\DAY09.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

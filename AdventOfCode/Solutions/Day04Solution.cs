@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.Itsho.Solutions
 {
-    public static class Day4Solution
+    public static class Day04Solution
     {
         internal static int GetMD5Answer(string p_strInput, int p_intZeroCount)
         {

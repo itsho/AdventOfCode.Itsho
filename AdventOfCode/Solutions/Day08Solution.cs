@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.Itsho.Solutions
 {
-    public static class Day8Solution
+    public static class Day08Solution
     {
         /// <summary>
         /// what is the number of characters of code for string literals minus the number of characters in memory for the values of the strings in total for the entire file

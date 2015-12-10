@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode.Itsho.Solutions
 {
-    public static class Day7Solution
+    public static class Day07Solution
     {
         internal static int GetWireSignalResult(string p_strWireName, string p_strInput, bool p_blnPart2 = false)
         {

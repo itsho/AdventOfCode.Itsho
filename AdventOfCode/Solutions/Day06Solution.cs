@@ -2,7 +2,7 @@
 
 namespace AdventOfCode.Itsho.Solutions
 {
-    public static class Day6Solution
+    public static class Day06Solution
     {
         internal static int GetTurnedLights1(string p_strInput)
         {

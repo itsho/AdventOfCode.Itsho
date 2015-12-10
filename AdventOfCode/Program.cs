@@ -87,20 +87,37 @@ namespace AdventOfCode.Itsho
                 return (intStringWithCodeLength - intCodeLen).ToString();
             });
            
-            */
+            
             
             Console.WriteLine("------ Day 9 ------");
             Tester.TestDay9();
             ConsoleWriteLineTimed("Shortest route: ", () =>
             {
                 var lstRows = File.ReadAllLines(@"RiddleSources\DAY9.txt");
-                return Day9Solution.GetRouteDistance(lstRows,true).ToString();
+                return Day09Solution.GetRouteDistance(lstRows,true).ToString();
             });
 
             ConsoleWriteLineTimed("Longest route: ", () =>
             {
                 var lstRows = File.ReadAllLines(@"RiddleSources\DAY9.txt");
-                return Day9Solution.GetRouteDistance(lstRows, false).ToString();
+                return Day09Solution.GetRouteDistance(lstRows, false).ToString();
+            });
+
+             * */
+            Console.WriteLine("------ Day 10 ------");
+            Tester.TestDay10();
+            ConsoleWriteLineTimed("Length of 40 times: ", () =>
+            {
+                var lstRows = File.ReadAllLines(@"RiddleSources\DAY10.txt");
+
+                return Day10Solution.LookAndSay(lstRows[0],40).Length.ToString();
+            });
+
+            ConsoleWriteLineTimed("Length of 50 times: ", () =>
+            {
+                var lstRows = File.ReadAllLines(@"RiddleSources\DAY10.txt");
+
+                return Day10Solution.LookAndSay(lstRows[0], 50).Length.ToString();
             });
 
             Console.WriteLine("Press any key to exit...");

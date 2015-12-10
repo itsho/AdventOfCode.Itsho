@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace AdventOfCode.Itsho.Solutions
 {
-    public static class Day2Solution
+    public static class Day02Solution
     {
         #region public methods
 
@@ -54,7 +54,7 @@ namespace AdventOfCode.Itsho.Solutions
             return new Tuple<int, int>(lstInts[0], lstInts[1]);
         }
 
-        private static Day2Box GetSizeDimensions(string p_strSingleBox)
+        private static Day02Box GetSizeDimensions(string p_strSingleBox)
         {
             if (string.IsNullOrEmpty(p_strSingleBox))
             {
@@ -63,7 +63,7 @@ namespace AdventOfCode.Itsho.Solutions
 
             var arrBoxDetail = p_strSingleBox.Split('x');
 
-            return new Day2Box()
+            return new Day02Box()
             {
                 Length = Convert.ToInt32(arrBoxDetail[0]),
                 Width = Convert.ToInt32(arrBoxDetail[1]),
@@ -71,7 +71,7 @@ namespace AdventOfCode.Itsho.Solutions
             };
         }
 
-        private static int GetWrappingSingleBox(Day2Box p_box)
+        private static int GetWrappingSingleBox(Day02Box p_box)
         {
             //AreaOfBox = 2*l*w + 2*w*h + 2*h*l
             var intSurfaceArea = 2 * p_box.Length * p_box.Width + 2 * p_box.Width * p_box.Height + 2 * p_box.Height * p_box.Length;
