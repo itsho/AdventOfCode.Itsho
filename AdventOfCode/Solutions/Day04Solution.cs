@@ -11,26 +11,36 @@ namespace AdventOfCode.Itsho.Solutions
     {
         internal static int GetMD5Answer(string p_strInput, int p_intZeroCount)
         {
-            // brute force to find result. no other way
-            var lstNumbers = Enumerable.Range(0, 10000000).ToArray();
-
+            const int RANGE = 1000000;
 
             int intFoundAnswer = 0;
-            Parallel.ForEach(lstNumbers, (p_intCurrNumber, p_state) =>
+            for (int intRangeStart = 0; intRangeStart < 10000000; intRangeStart += RANGE)
             {
-                string strToHash = p_strInput + p_intCurrNumber.ToString();
+                // brute force to find result. no other way
+                var lstNumbers = Enumerable.Range(intRangeStart, intRangeStart + RANGE).ToArray();
 
-                string strMD5 = CalculateMD5Hash(strToHash);
 
-                if (strMD5.StartsWith(0.ToString("D" + p_intZeroCount)))
+                Parallel.ForEach(lstNumbers, (p_intCurrNumber, p_state) =>
                 {
-                    intFoundAnswer = p_intCurrNumber;
-                    // break all threads
-                    p_state.Break();
+                    string strToHash = p_strInput + p_intCurrNumber.ToString();
+
+                    string strMD5 = CalculateMD5Hash(strToHash);
+
+                    if (strMD5.StartsWith(0.ToString("D" + p_intZeroCount)))
+                    {
+                        intFoundAnswer = p_intCurrNumber;
+                        // break all threads
+                        p_state.Break();
+                    }
+                });
+                if (intFoundAnswer != 0)
+                {
+                    return intFoundAnswer;
                 }
-            });
+            }
 
             return intFoundAnswer;
+
         }
 
         // http://blogs.msdn.com/b/csharpfaq/archive/2006/10/09/how-do-i-calculate-a-md5-hash-from-a-string_3f00_.aspx

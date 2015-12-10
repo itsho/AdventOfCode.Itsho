@@ -7,17 +7,15 @@ namespace AdventOfCode.Itsho.Solutions
 {
     public static class Day07Solution
     {
-        internal static int GetWireSignalResult(string p_strWireName, string p_strInput, bool p_blnPart2 = false)
+        internal static int GetWireSignalResult(string p_strWireName, string[] p_arrInput, bool p_blnPart2 = false)
         {
             Dictionary<string, ushort> dicWires = new Dictionary<string, ushort>();
-
-            var arrRows = p_strInput.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
 
             // key = TargetWire
             // Value = Command
             SortedDictionary<string, string> dicInstructions = new SortedDictionary<string, string>();
 
-            InitInstructions(arrRows, dicInstructions);
+            InitInstructions(p_arrInput, dicInstructions);
             
             SolvePart1(dicInstructions, ref dicWires);
             
@@ -25,7 +23,7 @@ namespace AdventOfCode.Itsho.Solutions
             if (p_blnPart2)
             {
                 // fill instructions list again (since it was emptied by SolvePart1) 
-                InitInstructions(arrRows, dicInstructions);
+                InitInstructions(p_arrInput, dicInstructions);
 
                 // take the signal you got on wire a, override wire b to that signal
                 dicInstructions["b"] = dicWires[p_strWireName].ToString();// + " -> b";

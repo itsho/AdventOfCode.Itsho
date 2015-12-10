@@ -4,12 +4,12 @@ namespace AdventOfCode.Itsho.Solutions
 {
     public static class Day06Solution
     {
-        internal static int GetTurnedLights1(string p_strInput)
+        internal static int GetTurnedLights1(string[] p_arrInput)
         {
             bool[,] arrLights = new bool[1000, 1000];
             arrLights.Initialize();
 
-            foreach (var strSingleInstructionsRow in p_strInput.Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries))
+            foreach (var strSingleInstructionsRow in p_arrInput)
             {
                 ParseRowPart1(strSingleInstructionsRow, ref arrLights);
             }
@@ -76,12 +76,12 @@ namespace AdventOfCode.Itsho.Solutions
             }
         }
 
-        internal static long GetTurnedLights2(string p_strInput)
+        internal static long GetTurnedLights2(string[] p_arrInput)
         {
             int[,] arrLights = new int[1000, 1000];
             arrLights.Initialize();
 
-            foreach (var strSingleInstructionsRow in p_strInput.Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries))
+            foreach (var strSingleInstructionsRow in p_arrInput)
             {
                 ParseRowPart2(strSingleInstructionsRow, ref arrLights);
             }

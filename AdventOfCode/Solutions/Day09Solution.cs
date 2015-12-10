@@ -6,7 +6,7 @@ namespace AdventOfCode.Itsho.Solutions
 {
     public static class Day09Solution
     {
-        public static int GetRouteDistance(string[] p_strInput, bool p_blnFindShortestRoute)
+        public static int GetRouteDistance(string[] p_arrInput, bool p_blnFindShortestRoute)
         {
             // Key= Destination City name
             // Value = class of that city
@@ -14,7 +14,7 @@ namespace AdventOfCode.Itsho.Solutions
 
             #region Parse input
 
-            foreach (var strSingleRoute in p_strInput)
+            foreach (var strSingleRoute in p_arrInput)
             {
                 // example line
                 // "Tristram to AlphaCentauri = 34"

@@ -8,13 +8,12 @@ namespace AdventOfCode.Itsho.Solutions
     {
         #region public methods
 
-        public static int GetWrappingTotal(string p_strRiddleSource)
+        public static int GetWrappingTotal(string[] p_arrRiddleSource)
         {
-            var arrBoxes = p_strRiddleSource.Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
 
             int intTotal = 0;
 
-            foreach (var strBox in arrBoxes)
+            foreach (var strBox in p_arrRiddleSource)
             {
                 var box = GetSizeDimensions(strBox);
 
@@ -24,13 +23,11 @@ namespace AdventOfCode.Itsho.Solutions
             return intTotal;
         }
 
-        public static int GetRibbon(string p_strRiddleSource)
+        public static int GetRibbon(string[] p_arrRiddleSource)
         {
-            var arrBoxes = p_strRiddleSource.Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-
             int intTotal = 0;
 
-            foreach (var strBox in arrBoxes)
+            foreach (var strBox in p_arrRiddleSource)
             {
                 var box = GetSizeDimensions(strBox);
                 var smallestSide = GetSmallestSide(box.Length, box.Width, box.Height);

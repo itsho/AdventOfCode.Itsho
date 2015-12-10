@@ -10,12 +10,11 @@ namespace AdventOfCode.Itsho.Solutions
     {
         private static readonly object lockThis = new object();
 
-        public static int CountNiceStringsPart1(string p_strInput)
+        public static int CountNiceStringsPart1(string[] p_arrInput)
         {
-            var arrStrings = p_strInput.Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
 
             int intNiceCounter = 0;
-            Parallel.ForEach(arrStrings, (p_strCurrInput) =>
+            Parallel.ForEach(p_arrInput, (p_strCurrInput) =>
             {
                 if (IsNiceStringPart1(p_strCurrInput))
                 {
@@ -28,12 +27,10 @@ namespace AdventOfCode.Itsho.Solutions
             return intNiceCounter;
         }
 
-        public static int CountNiceStringsPart2(string p_strInput)
+        public static int CountNiceStringsPart2(string[] p_arrInput)
         {
-            var arrStrings = p_strInput.Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-
             int intNiceCounter = 0;
-            Parallel.ForEach(arrStrings, (p_strCurrInput) =>
+            Parallel.ForEach(p_arrInput, (p_strCurrInput) =>
             {
                 if (IsNiceStringPart2(p_strCurrInput))
                 {
