@@ -3,6 +3,7 @@ using AdventOfCode.Itsho.Solutions;
 using AdventOfCode.Itsho.Tests;
 using System;
 using System.Diagnostics;
+using System.IO;
 
 namespace AdventOfCode.Itsho
 {
@@ -38,6 +39,7 @@ namespace AdventOfCode.Itsho
             Console.WriteLine("------ Day 4 ------");
 
             Tester.TestDay4Part1();
+             
             ConsoleWriteLineTimed("Starts with 5 zeros: ", () => Day4Solution.GetMD5Answer(RiddleSource.DAY4_RIDDLE, 5).ToString());
             ConsoleWriteLineTimed("Starts with 6 zeros: ", () => Day4Solution.GetMD5Answer(RiddleSource.DAY4_RIDDLE, 6).ToString());
            
@@ -47,7 +49,7 @@ namespace AdventOfCode.Itsho
             ConsoleWriteLineTimed("Total nice strings: ", () => Day5Solution.CountNiceStringsPart1(RiddleSource.DAY5_RIDDLE).ToString());
             Tester.TestDay5Part2();
             ConsoleWriteLineTimed("Total nice strings: ", () => Day5Solution.CountNiceStringsPart2(RiddleSource.DAY5_RIDDLE).ToString());
-            */
+            
 
             Console.WriteLine("------ Day 6 ------");
 
@@ -56,6 +58,50 @@ namespace AdventOfCode.Itsho
 
             Tester.TestDay6Part2();
             ConsoleWriteLineTimed("Total brightness: ", () => Day6Solution.GetTurnedLights2(RiddleSource.DAY6_RIDDLE).ToString());
+            Console.WriteLine("------ Day 7 ------");
+            
+            Tester.TestDay7Part1();
+            ConsoleWriteLineTimed("wire a signal: ", () => Day7Solution.GetWireSignalResult("a",RiddleSource.DAY7_RIDDLE).ToString());
+            ConsoleWriteLineTimed("wire a new signal: ", () => Day7Solution.GetWireSignalResult("a", RiddleSource.DAY7_RIDDLE, true).ToString());
+            
+            
+            Console.WriteLine("------ Day 8 ------");
+            Tester.TestDay8Part1();
+            ConsoleWriteLineTimed("Total code characters minus memory characters: ", () =>
+            {
+                int intCodeLen, intStringLen;
+                var lstRows = File.ReadAllLines(@"RiddleSources\DAY8.txt"); // make sure no extra 'newline' is in the end
+                Day8Solution.ParseStringPart1(lstRows, out intCodeLen, out intStringLen);
+
+                // number of characters of code for string literals minus the number of characters in memory  
+                return (intCodeLen - intStringLen).ToString();
+            });
+
+            ConsoleWriteLineTimed("Total code characters minus memory characters: ", () =>
+            {
+                int intCodeLen, intStringWithCodeLength;
+                var lstRows = File.ReadAllLines(@"RiddleSources\DAY8.txt"); // make sure no extra 'newline' is in the end
+                Day8Solution.ParseStringPart2(lstRows, out intCodeLen, out intStringWithCodeLength);
+
+                // characters to represent the newly encoded strings  MINUS the number of characters of code 
+                return (intStringWithCodeLength - intCodeLen).ToString();
+            });
+           
+            */
+            
+            Console.WriteLine("------ Day 9 ------");
+            Tester.TestDay9();
+            ConsoleWriteLineTimed("Shortest route: ", () =>
+            {
+                var lstRows = File.ReadAllLines(@"RiddleSources\DAY9.txt");
+                return Day9Solution.GetRouteDistance(lstRows,true).ToString();
+            });
+
+            ConsoleWriteLineTimed("Longest route: ", () =>
+            {
+                var lstRows = File.ReadAllLines(@"RiddleSources\DAY9.txt");
+                return Day9Solution.GetRouteDistance(lstRows, false).ToString();
+            });
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();

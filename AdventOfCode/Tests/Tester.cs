@@ -1,4 +1,5 @@
-﻿using AdventOfCode.Itsho.Solutions;
+﻿using System;
+using AdventOfCode.Itsho.Solutions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdventOfCode.Itsho.Tests
@@ -85,7 +86,6 @@ namespace AdventOfCode.Itsho.Tests
             Assert.AreEqual(1000000, Day6Solution.GetTurnedLights1("turn on 0,0 through 999,999"));
             Assert.AreEqual(1000, Day6Solution.GetTurnedLights1("toggle 0,0 through 999,0"));
             Assert.AreEqual(0, Day6Solution.GetTurnedLights1("turn off 499,499 through 500,500"));
-            
         }
 
         internal static void TestDay6Part2()
@@ -104,11 +104,81 @@ turn off 0,0 through 0,999"));
             // first row =  1st row 1, 2nd row 1
             // second row = 1st row 0, 2nd row 1
             // third row = 1st row 2, 2nd row 3, 3rd row 2
-            Assert.AreEqual(2*1000+3*1000+2*1000, Day6Solution.GetTurnedLights2(
+            Assert.AreEqual(2 * 1000 + 3 * 1000 + 2 * 1000, Day6Solution.GetTurnedLights2(
 @"turn on 0,0 through 1,999
 turn off 0,0 through 0,999
 toggle 0,0 through 2,999"));
+        }
+
+        internal static void TestDay7Part1()
+        {
+            const string INPUT_TEST1 =
+@"x AND y -> d
+x OR y -> e
+x LSHIFT 2 -> f
+y RSHIFT 2 -> g
+NOT x -> h
+NOT y -> i
+y -> z
+123 -> x
+456 -> y";
+
+            Assert.AreEqual(72, Day7Solution.GetWireSignalResult("d", INPUT_TEST1));
+            Assert.AreEqual(492, Day7Solution.GetWireSignalResult("f", INPUT_TEST1));
+            Assert.AreEqual(114, Day7Solution.GetWireSignalResult("g", INPUT_TEST1));
+            Assert.AreEqual(65412, Day7Solution.GetWireSignalResult("h", INPUT_TEST1));
+            Assert.AreEqual(65079, Day7Solution.GetWireSignalResult("i", INPUT_TEST1));
+            Assert.AreEqual(123, Day7Solution.GetWireSignalResult("x", INPUT_TEST1));
+            Assert.AreEqual(456, Day7Solution.GetWireSignalResult("y", INPUT_TEST1));
+            // wire to wire
+            Assert.AreEqual(456, Day7Solution.GetWireSignalResult("z", INPUT_TEST1));
+        }
+
+        internal static void TestDay8Part1()
+        {
+            int intCodeLength, intStringLength;
+            Day8Solution.ParseStringPart1(new string[]{ "\"\""}, out intCodeLength, out intStringLength);
+            Assert.AreEqual(2, intCodeLength);
+            Assert.AreEqual(0, intStringLength);
+
+            Day8Solution.ParseStringPart1(new string[]{"\"abc\""}, out intCodeLength, out intStringLength);
+            Assert.AreEqual(5, intCodeLength);
+            Assert.AreEqual(3, intStringLength);
+            // single \ should become \\
+            // single " will become \"
+            // single 
+            Day8Solution.ParseStringPart1(new string[]{"\"aaa\\\"aaa\""}, out intCodeLength, out intStringLength);
+            Assert.AreEqual(10, intCodeLength);
+            Assert.AreEqual(7, intStringLength);
+
+            Day8Solution.ParseStringPart1(new string[] { @"""\x27""" }, out intCodeLength, out intStringLength);
+            Assert.AreEqual(6, intCodeLength);
+            Assert.AreEqual(1, intStringLength);
+        }
+
+        internal static void TestDay9()
+        {
+            const string TEST_INPOUT =
+                @"London to Dublin = 464
+London to Belfast = 518
+Dublin to Belfast = 141";
+
+            /*Dublin -> London -> Belfast = 982
+London -> Dublin -> Belfast = 605
+London -> Belfast -> Dublin = 659
+Dublin -> Belfast -> London = 659
+Belfast -> Dublin -> London = 605
+Belfast -> London -> Dublin = 982 
+              
+             * */
+
+            // The shortest of these is London -> Dublin -> Belfast = 605, and so the answer is 605 in this example.
+            Assert.AreEqual(605, Day9Solution.GetRouteDistance(TEST_INPOUT.Split(new string[] { Environment.NewLine }, StringSplitOptions.None),true));
+
+            // the longest route would be 982 via (for example) Dublin -> London -> Belfast
+            Assert.AreEqual(982, Day9Solution.GetRouteDistance(TEST_INPOUT.Split(new string[] { Environment.NewLine }, StringSplitOptions.None),false));
 
         }
+
     }
 }
