@@ -1,6 +1,6 @@
-﻿using System;
-using AdventOfCode.Itsho.Solutions;
+﻿using AdventOfCode.Itsho.Solutions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AdventOfCode.Itsho.Tests
 {
@@ -14,14 +14,14 @@ namespace AdventOfCode.Itsho.Tests
 
         public static void TestDay2Part1()
         {
-            Assert.AreEqual(58, Day02Solution.GetWrappingTotal(new []{"2x3x4"}));
-            Assert.AreEqual(43, Day02Solution.GetWrappingTotal(new []{"1x1x10"}));
+            Assert.AreEqual(58, Day02Solution.GetWrappingTotal(new[] { "2x3x4" }));
+            Assert.AreEqual(43, Day02Solution.GetWrappingTotal(new[] { "1x1x10" }));
         }
 
         public static void TestDay2Part2()
         {
-            Assert.AreEqual(34, Day02Solution.GetRibbon(new []{"2x3x4"}));
-            Assert.AreEqual(14, Day02Solution.GetRibbon(new []{"1x1x10"}));
+            Assert.AreEqual(34, Day02Solution.GetRibbon(new[] { "2x3x4" }));
+            Assert.AreEqual(14, Day02Solution.GetRibbon(new[] { "1x1x10" }));
         }
 
         internal static void TestDay3Part1()
@@ -54,56 +54,56 @@ namespace AdventOfCode.Itsho.Tests
 
         internal static void TestDay5Part1()
         {
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new []{"ugknbfddgicrmopn"}) == 1);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new []{"aaa"}) == 1);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new []{"jchzalrnumimnmhp"}) == 0);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new []{"haegwjzuvuyypxyu"}) == 0);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new []{"dvszwmarrgswjxmb"}) == 0);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new[] { "ugknbfddgicrmopn" }) == 1);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new[] { "aaa" }) == 1);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new[] { "jchzalrnumimnmhp" }) == 0);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new[] { "haegwjzuvuyypxyu" }) == 0);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new[] { "dvszwmarrgswjxmb" }) == 0);
 
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new []{"aeiouxx"}) == 1);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new []{"aeixx"}) == 1);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new []{"xazegovxx"}) == 1);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new []{"aeiouaeiouaeiouxx"}) == 1);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new []{"aeiouaeiouaeiuxx"}) == 1);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new[] { "aeiouxx" }) == 1);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new[] { "aeixx" }) == 1);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new[] { "xazegovxx" }) == 1);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new[] { "aeiouaeiouaeiouxx" }) == 1);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart1(new[] { "aeiouaeiouaeiuxx" }) == 1);
         }
 
         internal static void TestDay5Part2()
         {
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new []{"xyxyefe"}) == 1);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new []{"xyxy"}) == 1);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new []{"aabcdefgaa"}) == 0);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new []{"aabcdedgaa"}) == 1);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new []{"qjhvhtzxzqqjkmpb"}) == 1);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new []{"aaaodo"}) == 0);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new []{"xxyxx"}) == 1);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new []{"xxdydxx"}) == 1);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new []{"uurcxstgmygtbstg"}) == 0);
-            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new []{"ieodomkazucvgmuy"}) == 0);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new[] { "xyxyefe" }) == 1);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new[] { "xyxy" }) == 1);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new[] { "aabcdefgaa" }) == 0);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new[] { "aabcdedgaa" }) == 1);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new[] { "qjhvhtzxzqqjkmpb" }) == 1);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new[] { "aaaodo" }) == 0);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new[] { "xxyxx" }) == 1);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new[] { "xxdydxx" }) == 1);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new[] { "uurcxstgmygtbstg" }) == 0);
+            Assert.IsTrue(Day05Solution.CountNiceStringsPart2(new[] { "ieodomkazucvgmuy" }) == 0);
         }
 
         internal static void TestDay6Part1()
         {
-            Assert.AreEqual(1000000, Day06Solution.GetTurnedLights1(new []{"turn on 0,0 through 999,999"}));
-            Assert.AreEqual(1000, Day06Solution.GetTurnedLights1(new []{"toggle 0,0 through 999,0"}));
-            Assert.AreEqual(0, Day06Solution.GetTurnedLights1(new []{"turn off 499,499 through 500,500"}));
+            Assert.AreEqual(1000000, Day06Solution.GetTurnedLights1(new[] { "turn on 0,0 through 999,999" }));
+            Assert.AreEqual(1000, Day06Solution.GetTurnedLights1(new[] { "toggle 0,0 through 999,0" }));
+            Assert.AreEqual(0, Day06Solution.GetTurnedLights1(new[] { "turn off 499,499 through 500,500" }));
         }
 
         internal static void TestDay6Part2()
         {
-            Assert.AreEqual(1, Day06Solution.GetTurnedLights2(new []{"turn on 0,0 through 0,0"}));
-            Assert.AreEqual(1000000, Day06Solution.GetTurnedLights2(new []{"turn on 0,0 through 999,999"}));
-            Assert.AreEqual(2000000, Day06Solution.GetTurnedLights2(new []{"toggle 0,0 through 999,999"}));
+            Assert.AreEqual(1, Day06Solution.GetTurnedLights2(new[] { "turn on 0,0 through 0,0" }));
+            Assert.AreEqual(1000000, Day06Solution.GetTurnedLights2(new[] { "turn on 0,0 through 999,999" }));
+            Assert.AreEqual(2000000, Day06Solution.GetTurnedLights2(new[] { "toggle 0,0 through 999,999" }));
             Assert.AreEqual(2000, Day06Solution.GetTurnedLights2(new[] { "toggle 0,0 through 999,0" }));
-            Assert.AreEqual(0, Day06Solution.GetTurnedLights2(new []{@"turn on 0,0 through 0,999","turn off 0,0 through 0,999"}));
+            Assert.AreEqual(0, Day06Solution.GetTurnedLights2(new[] { @"turn on 0,0 through 0,999", "turn off 0,0 through 0,999" }));
 
-            Assert.AreEqual(1000, Day06Solution.GetTurnedLights2(new []{
+            Assert.AreEqual(1000, Day06Solution.GetTurnedLights2(new[]{
 @"turn on 0,0 through 1,999",
 "turn off 0,0 through 0,999"}));
 
             // first row =  1st row 1, 2nd row 1
             // second row = 1st row 0, 2nd row 1
             // third row = 1st row 2, 2nd row 3, 3rd row 2
-            Assert.AreEqual(2 * 1000 + 3 * 1000 + 2 * 1000, Day06Solution.GetTurnedLights2(new [] {
+            Assert.AreEqual(2 * 1000 + 3 * 1000 + 2 * 1000, Day06Solution.GetTurnedLights2(new[] {
 @"turn on 0,0 through 1,999",
 "turn off 0,0 through 0,999",
 "toggle 0,0 through 2,999"}));
@@ -120,7 +120,7 @@ NOT x -> h
 NOT y -> i
 y -> z
 123 -> x
-456 -> y".Split(new string[] {Environment.NewLine}, StringSplitOptions.None);
+456 -> y".Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
 
             Assert.AreEqual(72, Day07Solution.GetWireSignalResult("d", INPUT_TEST1));
             Assert.AreEqual(492, Day07Solution.GetWireSignalResult("f", INPUT_TEST1));
@@ -136,17 +136,17 @@ y -> z
         internal static void TestDay8Part1()
         {
             int intCodeLength, intStringLength;
-            Day08Solution.ParseStringPart1(new string[]{ "\"\""}, out intCodeLength, out intStringLength);
+            Day08Solution.ParseStringPart1(new string[] { "\"\"" }, out intCodeLength, out intStringLength);
             Assert.AreEqual(2, intCodeLength);
             Assert.AreEqual(0, intStringLength);
 
-            Day08Solution.ParseStringPart1(new string[]{"\"abc\""}, out intCodeLength, out intStringLength);
+            Day08Solution.ParseStringPart1(new string[] { "\"abc\"" }, out intCodeLength, out intStringLength);
             Assert.AreEqual(5, intCodeLength);
             Assert.AreEqual(3, intStringLength);
             // single \ should become \\
             // single " will become \"
-            // single 
-            Day08Solution.ParseStringPart1(new string[]{"\"aaa\\\"aaa\""}, out intCodeLength, out intStringLength);
+            // single
+            Day08Solution.ParseStringPart1(new string[] { "\"aaa\\\"aaa\"" }, out intCodeLength, out intStringLength);
             Assert.AreEqual(10, intCodeLength);
             Assert.AreEqual(7, intStringLength);
 
@@ -167,16 +167,15 @@ London -> Dublin -> Belfast = 605
 London -> Belfast -> Dublin = 659
 Dublin -> Belfast -> London = 659
 Belfast -> Dublin -> London = 605
-Belfast -> London -> Dublin = 982 
-              
+Belfast -> London -> Dublin = 982
+
              * */
 
             // The shortest of these is London -> Dublin -> Belfast = 605, and so the answer is 605 in this example.
-            Assert.AreEqual(605, Day09Solution.GetRouteDistance(TEST_INPOUT.Split(new string[] { Environment.NewLine }, StringSplitOptions.None),true));
+            Assert.AreEqual(605, Day09Solution.GetRouteDistance(TEST_INPOUT.Split(new string[] { Environment.NewLine }, StringSplitOptions.None), true));
 
             // the longest route would be 982 via (for example) Dublin -> London -> Belfast
-            Assert.AreEqual(982, Day09Solution.GetRouteDistance(TEST_INPOUT.Split(new string[] { Environment.NewLine }, StringSplitOptions.None),false));
-
+            Assert.AreEqual(982, Day09Solution.GetRouteDistance(TEST_INPOUT.Split(new string[] { Environment.NewLine }, StringSplitOptions.None), false));
         }
 
         public static void TestDay10()
@@ -187,9 +186,20 @@ Belfast -> London -> Dublin = 982
             Assert.AreEqual("312211", Day10Solution.LookAndSay("111221"));
             Assert.AreEqual("13112221", Day10Solution.LookAndSay("312211"));
             Assert.AreEqual("1113213211", Day10Solution.LookAndSay("13112221"));
-
-            
         }
 
+        public static void TestDay11()
+        {
+            Assert.AreEqual(false, Day11Solution.Validate("hijklmmn".ToCharArray()));
+            Assert.AreEqual(false, Day11Solution.Validate("abbceffg".ToCharArray()));
+            Assert.AreEqual(false, Day11Solution.Validate("abbcegjk".ToCharArray()));
+
+            Assert.AreEqual(true, Day11Solution.Validate("abcdffaa".ToCharArray()));
+            Assert.AreEqual(true, Day11Solution.Validate("ghjaabcc".ToCharArray()));
+
+
+            Assert.AreEqual("abcdffaa", Day11Solution.GetNextPassword("abcdefgh"));
+            Assert.AreEqual("ghjaabcc", Day11Solution.GetNextPassword("ghijklmn"));
+        }
     }
 }

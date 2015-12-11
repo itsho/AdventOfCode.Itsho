@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Solutions\Day11Solution.cs" />
     <Compile Include="Solutions\Day10Solution.cs" />
     <Compile Include="Solutions\Day02Box.cs" />
     <Compile Include="Solutions\Day01Solution.cs" />
@@ -90,6 +91,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="RiddleSources\DAY08.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RiddleSources\DAY11.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="RiddleSources\DAY10.txt">
