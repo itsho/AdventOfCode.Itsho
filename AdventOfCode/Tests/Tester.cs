@@ -193,10 +193,11 @@ Belfast -> London -> Dublin = 982
             Assert.AreEqual(false, Day11Solution.Validate("hijklmmn".ToCharArray()));
             Assert.AreEqual(false, Day11Solution.Validate("abbceffg".ToCharArray()));
             Assert.AreEqual(false, Day11Solution.Validate("abbcegjk".ToCharArray()));
+            Assert.AreEqual(false, Day11Solution.Validate("abcdehhh".ToCharArray()));
 
             Assert.AreEqual(true, Day11Solution.Validate("abcdffaa".ToCharArray()));
             Assert.AreEqual(true, Day11Solution.Validate("ghjaabcc".ToCharArray()));
-
+            
 
             Assert.AreEqual("abcdffaa", Day11Solution.GetNextPassword("abcdefgh"));
             Assert.AreEqual("ghjaabcc", Day11Solution.GetNextPassword("ghijklmn"));

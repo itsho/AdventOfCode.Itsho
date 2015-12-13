@@ -28,46 +28,95 @@ namespace AdventOfCode.Itsho.Solutions
 
             int intCurrChar = p_strCurrentPassword.Length - 1;
 
-            while (!blnIsValid)
+            while (!blnIsValid && intCurrChar > 0)
             {
-                //for (int intCurrChar = p_strCurrentPassword.Length-1; intCurrChar > 0; intCurrChar--)
-
-                // get last char
-                var lastChar = arrResult[intCurrChar];
-
                 // Increase by one
-                lastChar++;
+                arrResult[intCurrChar]++;
 
-                while (m_lstBadChars.Contains(lastChar))
+                // if one of the chars are bad
+                while (m_lstBadChars.Contains(arrResult[intCurrChar]))
                 {
-                    lastChar++;
+                    // go to next char
+                    arrResult[intCurrChar]++;
+
+                    // and reset all chars to the end to 'a'
+                    //because you eventually skip all the passwords that start with XXi..., since 'i' is not allowed.
+                    ResetCharsToEnd(intCurrChar + 1, arrResult);
                 }
 
                 // if overflow
-                if (lastChar > 'z')
+                if (arrResult[intCurrChar] > 'z')
                 {
-                    //make it a again, 
-                    lastChar = 'a';
-                    arrResult[intCurrChar] = lastChar;
+                    //make it 'a' again,
+                    arrResult[intCurrChar] = 'a';
 
-                    //go to previous charindex
-                    intCurrChar--;
+                    // and reset all chars to the end to 'a'
+                    //because you eventually skip all the passwords that start with XXi..., since 'i' is not allowed.
+                    ResetCharsToEnd(intCurrChar + 1, arrResult);
+
+                    // if we are not in first char
+                    if (intCurrChar > 0)
+                    {
+                        // increase previous char
+                        IncreasePreviousChar(intCurrChar - 1, arrResult);
+
+                        blnIsValid = Validate(arrResult);
+                    }
+                    // if we are in first char
+                    else
+                    {
+                        // we couldn't find valid pw
+                        return string.Empty;
+                    }
                 }
                 else
                 {
-                    // set new char
-                    arrResult[intCurrChar] = lastChar;
+                    blnIsValid = Validate(arrResult);
                 }
-
-                blnIsValid = Validate(arrResult);
             }
-
 
             if (blnIsValid)
             {
                 return string.Join(string.Empty, arrResult);
             }
             return string.Empty;
+        }
+
+        private static void IncreasePreviousChar(int p_intCharToStartWith, char[] p_arrResult)
+        {
+            for (int intCurrChar = p_intCharToStartWith; intCurrChar > 0; intCurrChar--)
+            {
+                // increase char
+                p_arrResult[intCurrChar]++;
+
+                // if char is bad
+                while (m_lstBadChars.Contains(p_arrResult[intCurrChar]))
+                {
+                    // go to next char
+                    p_arrResult[intCurrChar]++;
+                }
+
+                if (p_arrResult[intCurrChar] > 'z')
+                {
+                    p_arrResult[intCurrChar] = 'a';
+                    IncreasePreviousChar(intCurrChar - 1, p_arrResult);
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+
+        private static void ResetCharsToEnd(int p_intCharIndexToStartWith, char[] p_arrResult)
+        {
+            // reset all chars to the end
+            for (int intCurrCharToReset = p_intCharIndexToStartWith;
+                intCurrCharToReset < p_arrResult.Length;
+                intCurrCharToReset++)
+            {
+                p_arrResult[intCurrCharToReset] = 'a';
+            }
         }
 
         internal static bool Validate(char[] p_arrResult)
@@ -85,7 +134,7 @@ namespace AdventOfCode.Itsho.Solutions
             bool blnHasStraightSequance = false;
 
             //Passwords must contain at least two different, non-overlapping pairs of letters, like aa, bb, or zz.
-            bool blnHasPairSequance = false;
+            List<int> lstIndexOfPairSequance = new List<int>();
 
             for (int intCurrChar = 0; intCurrChar < p_arrResult.Length - 2; intCurrChar++)
             {
@@ -97,17 +146,25 @@ namespace AdventOfCode.Itsho.Solutions
                         blnHasStraightSequance = true;
                     }
                 }
+            }
 
-                if (!blnHasPairSequance)
+            for (int intCurrChar = 0; intCurrChar < p_arrResult.Length - 1; intCurrChar++)
+            {
+                // if this pair NOT already exists in our list, 
+                // and this pair does NOT overlaps the previous pair
+                if (!lstIndexOfPairSequance.Contains(intCurrChar) && !lstIndexOfPairSequance.Contains(intCurrChar-1))
                 {
+                    // pair seq but not triple seq
                     if (p_arrResult[intCurrChar] == p_arrResult[intCurrChar + 1])
                     {
-                        blnHasPairSequance = true;
+                        lstIndexOfPairSequance.Add(intCurrChar);
                     }
                 }
             }
 
-            return (blnHasPairSequance && blnHasStraightSequance);
+
+
+            return (lstIndexOfPairSequance.Count >= 2 && blnHasStraightSequance);
         }
     }
 }
