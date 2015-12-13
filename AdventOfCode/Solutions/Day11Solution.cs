@@ -24,7 +24,7 @@ namespace AdventOfCode.Itsho.Solutions
         {
             var arrResult = p_strCurrentPassword.ToCharArray();
 
-            bool blnIsValid = Validate(arrResult);
+            bool blnIsValid = false;//Validate(arrResult);
 
             int intCurrChar = p_strCurrentPassword.Length - 1;
 
@@ -101,10 +101,9 @@ namespace AdventOfCode.Itsho.Solutions
                     p_arrResult[intCurrChar] = 'a';
                     IncreasePreviousChar(intCurrChar - 1, p_arrResult);
                 }
-                else
-                {
-                    break;
-                }
+               
+                break;
+                
             }
         }
 

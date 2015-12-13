@@ -124,11 +124,20 @@ namespace AdventOfCode.Itsho
 
             Console.WriteLine("------ Day 11 ------");
             Tester.TestDay11();
-            ConsoleWriteLineTimed("Next password: ", () =>
+            ConsoleWriteLineTimed("Next password 1: ", () =>
             {
                 var lstRows = File.ReadAllLines(@"RiddleSources\DAY11.txt");
 
                 return Day11Solution.GetNextPassword(lstRows[0]);
+            });
+
+            ConsoleWriteLineTimed("Next password 2: ", () =>
+            {
+                var lstRows = File.ReadAllLines(@"RiddleSources\DAY11.txt");
+
+                var strNextPW = Day11Solution.GetNextPassword(lstRows[0]);
+
+                return Day11Solution.GetNextPassword(strNextPW);
             });
 
 
