@@ -12,9 +12,6 @@ namespace AdventOfCode.Itsho
 
         private static void Main(string[] args)
         {
-            // Hebrew instructions for day 1: http://pastebin.com/2MeAkKZ3
-
-            /*
             Console.WriteLine("------ Day 1 ------");
             Tester.TestDay1Part2();
             ConsoleWriteLineTimed("Enter basement is in position: " ,()=>Day01Solution.FindBasement(File.ReadAllLines(@"RiddleSources\DAY01.txt")[0]).ToString());
@@ -119,7 +116,7 @@ namespace AdventOfCode.Itsho
 
                 return Day10Solution.LookAndSay(lstRows[0], 50).Length.ToString();
             });
-            */
+            
 
 
             Console.WriteLine("------ Day 11 ------");
